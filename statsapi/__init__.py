@@ -95,8 +95,10 @@ def schedule(
                     "game_date": date["date"],
                     "game_type": game["gameType"],
                     "status": game["status"]["detailedState"],
-                    "away_name": game["teams"]["away"]["team"]["name"],
-                    "home_name": game["teams"]["home"]["team"]["name"],
+                    "away_name": game["teams"]["away"]["team"]
+                    .get("name", ""),
+                    "home_name": game["teams"]["home"]["team"],
+                    .get("name", ""),
                     "away_id": game["teams"]["away"]["team"]["id"],
                     "home_id": game["teams"]["home"]["team"]["id"],
                     "doubleheader": game["doubleHeader"],
